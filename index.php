@@ -84,18 +84,19 @@
 <body>
     <main>
         <?php
-
         foreach($faq as $testo) {
             foreach($testo as $tipoElemento => $dato) {
                 if($tipoElemento === "titolo") {
                     ?> <h1><?php echo $dato; ?> </h1> <?php
                 }
-
-                echo $paragrafo;
+                if($tipoElemento === "paragrafo") {
+                    ?> <p><?php echo $dato; ?></p> <?php
+                }
+                if($tipoElemento === "sottotitolo") {
+                    ?> <h2><?php echo $dato; ?></h2> <?php
+                }
             }
         }
-
-
         ?>
     </main>
 </body>
